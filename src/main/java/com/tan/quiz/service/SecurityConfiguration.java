@@ -19,10 +19,6 @@ public class SecurityConfiguration {
     @Autowired
     UserDetailsService userDetailsService;
 
-    @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-        return (web) -> web.ignoring().requestMatchers("/h2-console");
-    }
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
